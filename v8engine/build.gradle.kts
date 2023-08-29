@@ -34,6 +34,7 @@ android {
 
 dependencies {
     implementation("com.caoccao.javet:javet-android:2.2.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

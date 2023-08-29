@@ -3,12 +3,19 @@ package com.aiselp.autojs.v8plugin
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import com.aiselp.autojs.v8plugin.ui.theme.V8pluginTheme
 
@@ -27,13 +34,19 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-}
-
-@Composable
-fun MainContext() {
-    Column {
-       Text(text = "测试js代码")
-
+    @Composable
+    fun MainContext() {
+        val code = remember { mutableStateOf("") }
+        Column {
+            Text(text = "测试js代码")
+            TextField(code.value, { code.value = it }, Modifier.fillMaxWidth())
+            Row (Modifier.fillMaxWidth(),horizontalArrangement = Arrangement.End){
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "运行")
+                }
+            }
+        }
     }
 }
+
 

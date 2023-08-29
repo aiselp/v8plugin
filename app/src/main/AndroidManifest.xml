@@ -23,6 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="org.autojs.plugin.sdk.registry"
+            android:value="com.aiselp.autojs.v8plugin.MyPluginRegistry" />
     </application>
-
 </manifest>
